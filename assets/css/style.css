@@ -1,10 +1,11 @@
 body {	 
-	background-image: url("mount.JPG");
+	background-image: url("../images/everest.jpg");
+	background-size: cover;
 	}
 
 h1 {
-	color: blue;
-	margin: 50px 370px;
+	color: navy;
+	margin: 50px 170px;
 	
 }
 
@@ -12,14 +13,18 @@ h1 {
 	width: 300px;
 	height: 300px;
 	position: relative;
-	border: 1px solid blue;
+	border: 3px solid blue;
 	text-align: center;
-	margin: 50px 300px;
+	margin: 70px 100px;
+	backface-visibility: 50%;
+	
 	}
 
 p {
 	
 	font-size: 20px;
 	font-weight: bold;
+	color: navy;
+
 
 }

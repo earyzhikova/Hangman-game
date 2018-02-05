@@ -20,7 +20,9 @@
    */
   function setUp() {
       wrongGuess = [];
+      document.getElementById('js-wrong-guess').innerHTML = wrongGuess;
       guessRemain = 6;
+      document.getElementById('js-guess-remain').innerHTML = guessRemain;
       randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
       var underscoreText = "";
       for (var i = 0; i < randomWord.length; i++) {
@@ -61,14 +63,18 @@ function replaceAt(string, index, replace) {
           }
         }
         else {
+            wrongGuess.push(userGuess);
+            document.getElementById('js-wrong-guess').innerHTML = wrongGuess.join(' ');
             var guessRemain = document.getElementById("js-guess-remain").innerHTML;
             guessRemain = parseInt(guessRemain)-1;
             document.getElementById("js-guess-remain").innerHTML = guessRemain;
             if(guessRemain < 1){
-              alert("Lost the Game!")
+              var lossText = document.getElementById('js-losses').innerHTML;
+              lossText = parseInt(lossText)+1;
+              document.getElementById('js-losses').innerHTML = lossText;
+              alert("Lost Game!");
+              setUp();
             }
-
-
             // wrongGuess.push(i);
             // wrongGuess.getElementById.innerHTML = wrongGuess.join(', ');
         }
